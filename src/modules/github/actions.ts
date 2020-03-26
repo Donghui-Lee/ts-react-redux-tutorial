@@ -14,4 +14,3 @@ export const getUserProfileAsync = createAsyncAction(
   GET_USER_PROFILE_ERROR
 )<undefined, GitHubProfile, AxiosError>();
 
-// Reducer
