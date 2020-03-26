@@ -2,9 +2,9 @@ import React from "react";
 import "./GithubProfileInfo.css";
 
 type GithubProfileInfoProps = {
-  name: string;
+  name: string | null;
   thumbnail: string;
-  bio: string;
+  bio: string | null;
   blog: string;
 };
 
