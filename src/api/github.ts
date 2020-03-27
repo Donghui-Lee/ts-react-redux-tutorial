@@ -1,13 +1,13 @@
 import axios from "axios";
 
 export async function getUserProfile(username: string) {
-  const response = await axios.get<GitHubProfile>(
+  const response = await axios.get<GithubProfile>(
     `https://api.github.com/users/${username}`
   );
   return response.data;
 }
 
-export type GitHubProfile = {
+export type GithubProfile = {
   login: string;
   id: number;
   node_id: string;
