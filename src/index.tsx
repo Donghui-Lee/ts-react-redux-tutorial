@@ -5,10 +5,14 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
-import rootReducer from "./modules";
-import Thunk from "redux-thunk";
+import rootReducer, { rootSaga } from "./modules";
+import createSagaMiddleWare from 'redux-saga';
 
-const store = createStore(rootReducer, applyMiddleware(Thunk));
+const sagaMiddleware = createSagaMiddleWare();
+
+const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
+
+sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
   <Provider store={store}>
